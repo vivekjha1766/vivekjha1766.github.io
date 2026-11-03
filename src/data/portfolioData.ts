@@ -10,6 +10,7 @@ export const personalInfo = {
   github: 'https://github.com/vivekjha1766',
   linkedin: 'https://www.linkedin.com/in/vivek-jha-7b9788276/',
   targetUrl: 'https://vivekjha1766.github.io/',
+  resumeUrl: 'https://drive.google.com/file/d/18wX4zkSvywQL8c7jtlxT_MJvpuZmanec/view?usp=drive_link',
   status: 'Open for AI/ML & Engineering Roles',
   college: 'IIIT Bhopal (B.Tech IT, 2024–2028)',
   cgpa: '8.48 CGPA',

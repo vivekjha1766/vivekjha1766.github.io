@@ -57,7 +57,7 @@ export const App: React.FC = () => {
 
   return (
     <div ref={appRef} className="min-h-screen bg-[#07080B] text-slate-200 selection:bg-emerald-500/25 selection:text-white">
-      <Navbar onOpenResume={() => setResumeOpen(true)} />
+      <Navbar />
 
       <main>
         <Hero onOpenResume={() => setResumeOpen(true)} />

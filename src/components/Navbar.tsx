@@ -1,13 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { personalInfo } from '../data/portfolioData'
-import { Terminal, Mail, Menu, X, FileText } from 'lucide-react'
+import { Terminal, Mail, Menu, X, Download } from 'lucide-react'
 import { GithubIcon, LinkedinIcon } from './Icons'
 
-interface NavbarProps {
-  onOpenResume: () => void
-}
-
-export const Navbar: React.FC<NavbarProps> = ({ onOpenResume }) => {
+export const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('hero')
@@ -112,13 +108,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume }) => {
             <LinkedinIcon className="w-4 h-4" />
           </a>
 
-          <button
-            onClick={onOpenResume}
-            className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium font-mono text-slate-300 hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg transition-all"
+          <a
+            href={personalInfo.resumeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium font-mono text-slate-300 hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 hover:border-emerald-500/40 rounded-lg transition-all"
+            aria-label="Download Resume"
           >
-            <FileText className="w-3.5 h-3.5 text-emerald-400" />
+            <Download className="w-3.5 h-3.5 text-emerald-400" />
             <span>Resume</span>
-          </button>
+          </a>
 
           <a
             href="#contact"
@@ -131,13 +130,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume }) => {
 
         {/* Mobile menu trigger */}
         <div className="flex md:hidden items-center gap-2">
-          <button
-            onClick={onOpenResume}
+          <a
+            href={personalInfo.resumeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center gap-1 px-2.5 py-1 text-xs font-mono text-slate-300 bg-white/5 border border-white/10 rounded-lg"
+            aria-label="Download Resume"
           >
-            <FileText className="w-3.5 h-3.5 text-emerald-400" />
+            <Download className="w-3.5 h-3.5 text-emerald-400" />
             <span>CV</span>
-          </button>
+          </a>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 border border-white/10"

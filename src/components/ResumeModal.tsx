@@ -1,6 +1,6 @@
 import React from 'react'
 import { personalInfo, educationList, leadershipRoles, skillCategories, projects, creativeWorks } from '../data/portfolioData'
-import { X, Printer, ExternalLink, Mail, Phone, MapPin, Award, BookOpen } from 'lucide-react'
+import { X, Printer, Download, ExternalLink, Mail, Phone, MapPin, Award, BookOpen } from 'lucide-react'
 
 interface ResumeModalProps {
   isOpen: boolean
@@ -26,13 +26,23 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
             </span>
           </div>
           <div className="flex items-center gap-2">
+            <a
+              href={personalInfo.resumeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono text-emerald-300 hover:text-white bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 rounded-lg transition-all"
+              title="Download Attached PDF from Google Drive"
+            >
+              <Download className="w-3.5 h-3.5" />
+              <span>Download PDF</span>
+            </a>
             <button
               onClick={handlePrint}
               className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono text-slate-300 hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg transition-all"
               title="Print or Save as PDF"
             >
               <Printer className="w-3.5 h-3.5" />
-              <span>Print / Save PDF</span>
+              <span>Print</span>
             </button>
             <button
               onClick={onClose}

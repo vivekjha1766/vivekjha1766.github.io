@@ -44,3 +44,4 @@ export interface CreativeWorkItem {
   description: string
   quote?: string
 }
+

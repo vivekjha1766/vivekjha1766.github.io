@@ -49,3 +49,4 @@ export const WaveformIcon: React.FC<{ className?: string }> = ({ className = 'w-
     <path d="M22 10v4" />
   </svg>
 )
+
